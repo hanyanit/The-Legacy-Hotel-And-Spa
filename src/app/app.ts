@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Whatsapp } from "./shared/whatsapp/whatsapp";
+import { Footer } from './shared/footer/footer';
+import { Navigation } from './shared/navigation/navigation';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Footer, Whatsapp, Navigation],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

@@ -1,0 +1,337 @@
+<nav
+  class="navigation"
+  [class.navigation--scrolled]="isScrolled"
+  [class.navigation--menu-open]="menuOpen"
+>
+
+  <div class="navigation__bar">
+
+    <div class="container navigation__container">
+
+      <!-- ================================================================
+           BRAND
+           ================================================================ -->
+
+      <a
+        routerLink="/"
+        class="navigation__brand"
+        aria-label="The Legacy Hotel & Spa"
+      >
+        <img
+          src="images/dark-logo.png"
+          alt="The Legacy Hotel & Spa"
+          class="navigation__logo"
+        />
+      </a>
+
+      <!-- ================================================================
+           DESKTOP NAVIGATION
+           ================================================================ -->
+
+      <div class="navigation__desktop">
+        <ul class="navigation__links">
+          <li>
+            <a
+              routerLink="/"
+              routerLinkActive="navigation__link--active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/rooms"
+              routerLinkActive="navigation__link--active"
+            >
+              Rooms
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/spa"
+              routerLinkActive="navigation__link--active"
+            >
+              Spa
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/gallery"
+              routerLinkActive="navigation__link--active"
+            >
+              Gallery
+            </a>
+          </li>
+
+
+          <li>
+            <a
+              routerLink="/reviews"
+              routerLinkActive="navigation__link--active"
+            >
+              Reviews
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/faq"
+              routerLinkActive="navigation__link--active"
+            >
+              FAQ
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/jobs"
+              routerLinkActive="navigation__link--active"
+            >
+              JOBS
+            </a>
+          </li>
+
+          <li>
+            <a
+              routerLink="/contact-us"
+              routerLinkActive="navigation__link--active"
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ================================================================
+           DESKTOP RESERVATION
+           ================================================================ -->
+
+      <a
+        routerLink="/booking"
+        class="navigation__reserve"
+      >
+        <span>Reserve</span>
+
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12h14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M13 6l6 6-6 6"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+
+      <!-- ================================================================
+           MOBILE MENU BUTTON
+           ================================================================ -->
+
+      <button
+        type="button"
+        class="navigation__menu-button"
+        [class.navigation__menu-button--open]="menuOpen"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="navigation-mobile-menu"
+        [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'"
+      >
+        <i
+          [class]="menuOpen ? 'fas fa-times' : 'fas fa-bars'"
+          aria-hidden="true"
+        ></i>
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ======================================================================
+       MOBILE MENU
+       ====================================================================== -->
+
+  <div
+    id="navigation-mobile-menu"
+    class="navigation__mobile"
+    [class.navigation__mobile--open]="menuOpen"
+  >
+
+    <div class="navigation__mobile-inner">
+
+      <!-- Mobile Heading -->
+
+      <div class="navigation__mobile-heading">
+        <span>Explore</span>
+        <p>The Legacy Hotel &amp; Spa</p>
+      </div>
+
+      <!-- Mobile Links -->
+
+      <ul class="navigation__mobile-links">
+
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="navigation__mobile-link--active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">01</span>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/rooms"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">02</span>
+            <span>Rooms</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/spa"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">03</span>
+            <span>Spa</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/gallery"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">04</span>
+            <span>Gallery</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/reviews"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">05</span>
+            <span>Reviews</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/faq"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">06</span>
+            <span>FAQ</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/jobs"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">07</span>
+            <span>Jobs</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerLink="/contact-us"
+            routerLinkActive="navigation__mobile-link--active"
+            (click)="closeMenu()"
+          >
+            <span class="navigation__mobile-number">08</span>
+            <span>Contact Us</span>
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- Mobile Reservation -->
+
+      <a
+        routerLink="/booking"
+        class="navigation__mobile-reserve"
+        (click)="closeMenu()"
+      >
+        <span>Reserve Your Stay</span>
+
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 12h14"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M13 6l6 6-6 6"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+
+      <!-- Mobile Contact -->
+
+      <div class="navigation__mobile-contact">
+
+        <div>
+          <span>Call</span>
+          <a href="tel:+27158803325">
+            015 880 3325
+          </a>
+        </div>
+
+        <div>
+          <span>Email</span>
+          <a href="mailto:bookings@thelegacyhotel.co.za">
+            bookings@thelegacyhotel.co.za
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

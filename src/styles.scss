@@ -1,1 +1,300 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   The Legacy Hotel & Spa — Global Styles / Design Tokens
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ========================================================================
+     COLOUR PALETTE
+     Modern Luxury — Cool Grey, White & Charcoal
+     ======================================================================== */
+
+  /* Primary */
+  --color-primary: #34383b;
+  --color-primary-hover: #202325;
+  --color-primary-light: #737b80;
+
+  /* Dark tones */
+  --color-navy: #25282a;
+  --color-navy-light: #4d5458;
+  --color-navy-dark: #17191a;
+
+  /* Backgrounds */
+  --color-bg: #f4f5f5;
+  --color-bg-soft: #eceeef;
+  --color-bg-alt: #e3e6e7;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f9f9;
+
+  /* Text */
+  --color-ink: #25282a;
+  --color-ink-muted: #6f767a;
+
+  /* Borders */
+  --color-border: #d9dddf;
+  --color-border-dark: #c4c9cc;
+
+  /* Accent */
+  --color-accent: #737b80;
+  --color-accent-light: #a8afb3;
+
+  /* Feedback */
+  --color-success: #4f7563;
+  --color-error: #a84e4e;
+
+  /* ========================================================================
+     TYPOGRAPHY
+     ======================================================================== */
+
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+
+  --fs-h1: clamp(2.25rem, 1.6rem + 2.5vw, 3.5rem);
+  --fs-h2: clamp(1.9rem, 1.4rem + 1.6vw, 2.6rem);
+  --fs-h3: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem);
+
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.75rem;
+
+  /* ========================================================================
+     LAYOUT
+     ======================================================================== */
+
+  --container-width: 90%;
+  --container-width-mobile: 92.5%;
+
+  /* ========================================================================
+     SPACING
+     ======================================================================== */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+
+  /* ========================================================================
+     UI
+     ======================================================================== */
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+
+  --shadow-card: 0 12px 35px rgba(20, 25, 28, 0.08);
+  --shadow-card-hover: 0 20px 50px rgba(20, 25, 28, 0.14);
+
+  --transition: 220ms ease;
+}
+
+/* ==========================================================================
+   RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+
+  color: var(--color-ink);
+  background: var(--color-bg);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 var(--space-3);
+
+  font-family: var(--font-display);
+  font-weight: 500;
+
+  color: var(--color-ink);
+
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 var(--space-3);
+
+  color: var(--color-ink-muted);
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   CONTAINER
+   ========================================================================== */
+
+.container {
+  width: var(--container-width);
+  max-width: var(--container-max);
+
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: var(--container-width-mobile);
+  }
+}
+
+/* ==========================================================================
+   SECTION HEADINGS
+   ========================================================================== */
+
+.section-heading {
+  max-width: 650px;
+
+  margin: 0 auto var(--space-7);
+
+  text-align: center;
+}
+
+.section-heading__eyebrow {
+  display: block;
+
+  margin-bottom: var(--space-3);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  color: var(--color-primary-light);
+}
+
+.section-heading h2 {
+  margin-bottom: var(--space-3);
+
+  font-size: var(--fs-h2);
+}
+
+.section-heading p {
+  margin: 0;
+
+  font-size: var(--fs-small);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0.7rem 1.25rem;
+
+  font-family: var(--font-body);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-radius: 0;
+
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+/* Primary Hotel Button */
+
+.btn--primary {
+  color: var(--color-ink);
+
+  background: transparent;
+
+  border: 1px solid var(--color-border-dark);
+}
+
+.btn--primary:hover {
+  color: #ffffff;
+
+  background: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  transform: translateY(-2px);
+}

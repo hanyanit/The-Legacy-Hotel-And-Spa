@@ -1,0 +1,159 @@
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+<app-page-hero
+  eyebrow="Book Direct & Save"
+  title="Special Offers"
+  paragraph="Skip the booking fees. Book with us directly and save."
+></app-page-hero>
+
+
+<!-- ================================================================
+     OFFER TICKET
+     ================================================================ -->
+<section class="offer">
+  <div class="container">
+
+    <article class="offer-ticket">
+
+      <!-- ==========================================================
+           SIDE RIBBON
+           ========================================================== -->
+      <div class="offer-ticket__ribbon">
+
+        <div class="offer-ticket__ribbon-bg"></div>
+
+        <div class="offer-ticket__ribbon-overlay"></div>
+
+        <span>Direct&nbsp;Booking</span>
+
+      </div>
+
+
+      <!-- ==========================================================
+           OFFER BODY
+           ========================================================== -->
+      <div class="offer-ticket__body">
+
+        <!-- ========================================================
+             DISCOUNT HEADING
+             ======================================================== -->
+        <div class="offer-ticket__head">
+
+          <div class="offer-ticket__amount">
+            <span class="offer-ticket__number">R100</span>
+            <span class="offer-ticket__off">OFF</span>
+          </div>
+
+          <span class="offer-ticket__badge">
+            Best Rate Guaranteed
+          </span>
+
+        </div>
+
+
+        <!-- ========================================================
+             OFFER TITLE
+             ======================================================== -->
+        <h3>
+          Book direct, keep more of your stay.
+        </h3>
+
+
+        <!-- ========================================================
+             BENEFITS
+             ======================================================== -->
+        <ul class="offer-ticket__points">
+
+          <li>
+            <i
+              class="fa-solid fa-check"
+              aria-hidden="true"
+            ></i>
+
+            <span>No booking-site mark-ups</span>
+          </li>
+
+          <li>
+            <i
+              class="fa-solid fa-check"
+              aria-hidden="true"
+            ></i>
+
+            <span>Applies to all room types</span>
+          </li>
+
+          <li>
+            <i
+              class="fa-solid fa-check"
+              aria-hidden="true"
+            ></i>
+
+            <span>Instant confirmation</span>
+          </li>
+
+        </ul>
+
+
+        <!-- ========================================================
+             TEAR LINE
+             ======================================================== -->
+        <div
+          class="offer-ticket__tear"
+          aria-hidden="true"
+        ></div>
+
+
+        <!-- ========================================================
+             REDEEM
+             ======================================================== -->
+        <div class="offer-ticket__redeem">
+
+          <!-- Promo Code -->
+          <div class="offer-ticket__code">
+
+            <span class="offer-ticket__code-label">
+              Code
+            </span>
+
+            <span class="offer-ticket__code-value">
+              100DISCOUNT2026
+            </span>
+
+            <button
+              type="button"
+              class="offer-ticket__copy"
+              (click)="copyCode()"
+              [attr.aria-label]="
+                copied
+                  ? 'Discount code copied'
+                  : 'Copy discount code'
+              "
+            >
+              <i
+                class="fa-solid"
+                [class.fa-copy]="!copied"
+                [class.fa-check]="copied"
+                aria-hidden="true"
+              ></i>
+            </button>
+
+          </div>
+
+
+          <!-- Book Now -->
+          <a
+            routerLink="/booking"
+            class="btn btn--primary offer-ticket__cta"
+          >
+            Book Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+</section>

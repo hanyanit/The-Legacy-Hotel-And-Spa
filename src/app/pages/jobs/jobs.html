@@ -1,0 +1,34 @@
+<section class="jobs-page">
+
+  <app-page-hero
+    eyebrow="Careers"
+    title="Jobs"
+    paragraph="Join the team at The Legacy Hotel & Spa. Explore our current vacancies and send us your CV."
+  ></app-page-hero>
+
+  <section class="jobs-page__content">
+
+    <div class="container">
+
+      <div class="jobs-grid">
+
+        <article
+          *ngFor="let offer of offers"
+          class="job-card"
+        >
+
+          <img
+            [src]="offer.image"
+            [alt]="offer.title + ' vacancy at The Legacy Hotel & Spa'"
+            loading="lazy"
+          />
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

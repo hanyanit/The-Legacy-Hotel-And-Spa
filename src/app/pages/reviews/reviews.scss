@@ -1,0 +1,615 @@
+/* ==========================================================================
+   REVIEWS PAGE
+   ========================================================================== */
+
+.reviews-page {
+  padding: 0 0 var(--space-8) 0;
+  background: var(--color-bg);
+}
+
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  align-items: start;
+}
+
+
+/* ==========================================================================
+   CATEGORY SIDEBAR
+   ========================================================================== */
+
+.reviews-categories {
+  position: sticky;
+  top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  padding-right: var(--space-4);
+  border-right: 1px solid var(--color-border);
+}
+
+.reviews-categories__label {
+  margin-bottom: var(--space-3);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--color-primary-light);
+}
+
+.reviews-categories__button {
+  width: 100%;
+  padding: 0.75rem 0;
+
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 400;
+  text-align: left;
+
+  color: var(--color-ink-muted);
+
+  background: transparent;
+  border: 0;
+  border-left: 2px solid transparent;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    border-color var(--transition),
+    padding-left var(--transition);
+}
+
+.reviews-categories__button:hover {
+  color: var(--color-ink);
+}
+
+.reviews-categories__button--active {
+  padding-left: 0.75rem;
+
+  font-weight: 600;
+  color: var(--color-ink);
+
+  border-left-color: var(--color-primary);
+}
+
+
+/* ==========================================================================
+   REVIEWS CONTENT
+   ========================================================================== */
+
+.reviews-content {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   CONTENT HEADING
+   ========================================================================== */
+
+.reviews-content__heading {
+  margin-bottom: var(--space-5);
+}
+
+.reviews-content__heading span {
+  display: block;
+
+  margin-bottom: var(--space-1);
+
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--color-ink);
+}
+
+.reviews-content__heading p {
+  margin: 0;
+
+  font-size: var(--fs-small);
+
+  color: var(--color-ink-muted);
+}
+
+
+/* ==========================================================================
+   REVIEWS GRID
+   ========================================================================== */
+
+.reviews-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: var(--space-5);
+}
+
+
+/* ==========================================================================
+   REVIEW CARD
+   ========================================================================== */
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding: var(--space-5);
+
+  background: var(--color-surface);
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+
+
+/* ==========================================================================
+   REVIEWER — ICON + NAME
+   ========================================================================== */
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+
+  gap: var(--space-3);
+
+  margin-bottom: var(--space-4);
+}
+
+
+/* ==========================================================================
+   REVIEWER ICON
+   ========================================================================== */
+
+.review-card__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  overflow: hidden;
+}
+
+.review-card__avatar img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+
+/* ==========================================================================
+   REVIEWER INFORMATION
+   ========================================================================== */
+
+.review-card__meta {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.2rem;
+
+  min-width: 0;
+}
+
+.review-card__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  color: var(--color-ink);
+}
+
+.review-card__date {
+  font-size: 0.72rem;
+
+  color: var(--color-ink-muted);
+}
+
+
+/* ==========================================================================
+   REVIEW TEXT
+   ========================================================================== */
+
+.review-card__quote {
+  flex: 1;
+
+  margin: 0 0 var(--space-5);
+
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-style: normal;
+  font-weight: 500;
+
+  line-height: 1.8;
+
+  color: var(--color-ink);
+}
+
+
+/* ==========================================================================
+   REVIEW FOOTER
+   ========================================================================== */
+
+.review-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  padding-top: var(--space-4);
+
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* ==========================================================================
+   PLATFORM LOGO
+   ========================================================================== */
+
+.review-card__platform {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: auto;
+  height: 30px;
+
+  background: transparent;
+  border: 0;
+}
+
+.review-card__platform img {
+  display: block;
+
+  width: auto;
+  max-width: 110px;
+  height: 27px;
+
+  object-fit: contain;
+}
+
+
+/* ==========================================================================
+   ★ STARS — SLOW & CONTINUOUS
+   ========================================================================== */
+
+.review-card__stars {
+  display: flex;
+  align-items: center;
+
+  gap: 0.25rem;
+
+  flex-shrink: 0;
+
+  line-height: 1;
+}
+
+.review-card__star {
+  display: block;
+
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1;
+
+  color: #b78a3b;
+
+  /* --- ENTRY pop‑in (runs once, then stays) --- */
+  animation: starPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+
+  /* --- CONTINUOUS glow & pulse (only for filled stars) --- */
+  &:not(.review-card__star--empty) {
+    position: relative;
+    animation: starPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+               starBreath 4s ease-in-out infinite 0.8s; /* slow & never stops */
+
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.8),
+      0 0 4px rgba(183, 138, 59, 0.28);
+
+    /* soft glow behind the star */
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(183, 138, 59, 0.2) 0%, transparent 70%);
+      animation: glowPulse 4s ease-in-out infinite 0.8s;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* slow shimmer sweep */
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -40%;
+      width: 180%;
+      height: 180%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 215, 100, 0.12), transparent 60%);
+      border-radius: 50%;
+      animation: shimmer 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+
+  /* empty stars – still have a subtle shimmer, no pulse */
+  &.review-card__star--empty {
+    color: transparent;
+    -webkit-text-stroke: 1px #cdbb96;
+    text-shadow: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -40%;
+      width: 180%;
+      height: 180%;
+      background: radial-gradient(circle at 30% 30%, rgba(200, 180, 150, 0.06), transparent 60%);
+      border-radius: 50%;
+      animation: shimmer 8s ease-in-out infinite;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+}
+
+
+/* --- Staggered entry delays (only for the pop‑in) --- */
+.review-card__star:nth-child(1) { animation-delay: 0.05s, 0.8s; }
+.review-card__star:nth-child(2) { animation-delay: 0.10s, 0.8s; }
+.review-card__star:nth-child(3) { animation-delay: 0.15s, 0.8s; }
+.review-card__star:nth-child(4) { animation-delay: 0.20s, 0.8s; }
+.review-card__star:nth-child(5) { animation-delay: 0.25s, 0.8s; }
+
+
+/* ==========================================================================
+   KEYFRAMES — SLOW & SMOOTH
+   ========================================================================== */
+
+/* Entry pop (runs once) */
+@keyframes starPop {
+  0% {
+    transform: scale(0) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Gentle breathing pulse – 4s cycle */
+@keyframes starBreath {
+  0%, 100% {
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.8),
+      0 0 4px rgba(183, 138, 59, 0.28);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow:
+      0 0 8px rgba(255, 215, 100, 0.6),
+      0 0 16px rgba(183, 138, 59, 0.35),
+      0 0 24px rgba(183, 138, 59, 0.15);
+    transform: scale(1.05);
+  }
+}
+
+/* Glow behind the star – 4s cycle */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+}
+
+/* Slow shimmer sweep – 6s cycle */
+@keyframes shimmer {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.2; }
+  50% { opacity: 0.7; }
+  100% { transform: rotate(360deg) scale(1.2); opacity: 0.2; }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE — TABLET
+   ========================================================================== */
+
+@media (max-width: 900px) {
+
+  .reviews-layout {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-6);
+  }
+
+
+  /* ------------------------------------------------------------------------
+     Category navigation becomes horizontal
+     ------------------------------------------------------------------------ */
+
+  .reviews-categories {
+    position: static;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    padding: 0 0 var(--space-4);
+
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .reviews-categories__label {
+    width: 100%;
+
+    margin-bottom: 0;
+  }
+
+  .reviews-categories__button {
+    width: auto;
+
+    padding: 0.65rem 1rem;
+
+    font-size: var(--fs-small);
+
+    color: var(--color-ink);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+  }
+
+  .reviews-categories__button:hover {
+    color: var(--color-ink);
+  }
+
+  .reviews-categories__button.reviews-categories__button--active {
+    padding-left: 1rem;
+
+    color: #ffffff !important;
+
+    background: var(--color-primary);
+
+    border-color: var(--color-primary);
+  }
+
+}
+
+
+/* ==========================================================================
+   REVIEWS GRID — SMALL TABLET
+   ========================================================================== */
+
+@media (max-width: 700px) {
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+  .reviews-page {
+    padding: var(--space-7) 0 var(--space-8);
+  }
+
+
+  .review-card {
+    padding: var(--space-5);
+  }
+
+
+  .review-card__quote {
+    font-size: var(--fs-small);
+
+    line-height: 1.75;
+  }
+
+
+  .review-card__footer {
+    gap: 1rem;
+  }
+
+
+  .review-card__platform {
+    height: 26px;
+  }
+
+  .review-card__platform img {
+    max-width: 95px;
+    height: 24px;
+  }
+
+
+  .review-card__stars {
+    gap: 0.2rem;
+  }
+
+  .review-card__star {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 420px) {
+
+  .reviews-page {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+
+  .review-card {
+    padding: var(--space-4);
+  }
+
+
+  .review-card__top {
+    gap: 0.75rem;
+  }
+
+
+  .review-card__avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .review-card__name {
+    font-size: 0.82rem;
+  }
+
+
+  .review-card__date {
+    font-size: 0.68rem;
+  }
+
+
+  .review-card__quote {
+    font-size: 0.84rem;
+  }
+
+}

@@ -1,0 +1,108 @@
+/* ==========================================================================
+   WHATSAPP FLOATING BUTTON
+   ========================================================================== */
+
+.whatsapp-button {
+  position: fixed;
+
+  right: var(--space-4, 1.5rem);
+  bottom: var(--space-4, 1.5rem);
+
+  z-index: 1200;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  color: #ffffff;
+
+  background: #25d366;
+
+  border-radius: 50%;
+
+  box-shadow: 0 10px 25px rgba(20, 25, 28, 0.22);
+
+  text-decoration: none;
+
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.whatsapp-button i {
+  font-size: 1.7rem;
+
+  pointer-events: none;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5b;
+
+  box-shadow: 0 14px 32px rgba(20, 25, 28, 0.3);
+
+  transform: translateY(-3px);
+}
+
+.whatsapp-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   PULSE — subtle attention cue
+   ========================================================================== */
+
+.whatsapp-button::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  opacity: 0.45;
+
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-button::before {
+    animation: none;
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .whatsapp-button {
+    right: var(--space-3, 1rem);
+    bottom: var(--space-3, 1rem);
+
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-button i {
+    font-size: 1.5rem;
+  }
+}

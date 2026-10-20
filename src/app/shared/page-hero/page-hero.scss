@@ -1,0 +1,98 @@
+/* ==========================================================================
+   PAGE HERO
+   ========================================================================== */
+
+.page-hero {
+  position: relative;
+  padding: 4rem 0;
+  text-align: left;
+  overflow: hidden;
+  background-color: var(--color-bg);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 8%;
+    width: 1px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: var(--container-width);
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-body);
+    font-size: var(--fs-label);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+
+    &::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--color-border-dark);
+    }
+  }
+
+  h1 {
+    max-width: 800px;
+    margin: 0 0 var(--space-4);
+    font-family: var(--font-display);
+    font-size: var(--fs-h1);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--color-ink);
+  }
+
+  p {
+    max-width: 650px;
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-ink-muted);
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .page-hero {
+    padding: 2rem 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page-hero {
+    padding: 2rem 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+/* Very small */
+@media (max-width: 380px) {
+  .page-hero {
+    padding: 2rem 0;
+
+    h1 {
+      font-size: 2.45rem;
+    }
+  }
+}

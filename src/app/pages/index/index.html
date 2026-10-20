@@ -1,0 +1,664 @@
+<!-- ==========================================================================
+     HOME HERO
+     ========================================================================== -->
+
+<section class="home-hero">
+
+  <!-- Background Image -->
+  <div class="home-hero__image"></div>
+
+  <!-- Dark / Soft Overlay -->
+  <div class="home-hero__overlay"></div>
+
+  <!-- Hero Content -->
+  <div class="container home-hero__container">
+
+    <div class="home-hero__content">
+
+      <span class="home-hero__eyebrow">
+        THE LEGACY HOTEL &amp; SPA
+      </span>
+
+      <h1>
+        Timeless Comfort.<br />
+        Modern Hospitality.
+      </h1>
+
+      <p>
+        A refined stay in the heart of Tzaneen, where comfort,
+        thoughtful hospitality and relaxation come together.
+      </p>
+
+      <div class="home-hero__actions">
+
+        <a 
+          routerLink="/booking"
+          class="home-hero__button home-hero__button--primary"
+        >
+          Reserve Your Stay
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          routerLink="/rooms"
+          class="home-hero__button home-hero__button--secondary"
+        >
+          Explore Rooms
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Bottom Information -->
+  <div class="container home-hero__bottom">
+
+    <div class="home-hero__location">
+
+      <span class="home-hero__location-line"></span>
+
+      <span>
+        Aqua Park · Tzaneen · Limpopo
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================================================================
+     WELCOME — THE LEGACY HOTEL & SPA
+     ========================================================================== -->
+
+<section class="home-welcome">
+  <div class="container home-welcome__grid">
+
+    <div class="home-welcome__content">
+
+      <span class="home-welcome__eyebrow">Welcome</span>
+
+      <h2>A Refined Stay In The Heart Of Tzaneen</h2>
+
+      <p>
+        The Legacy Hotel &amp; Spa is a hotel built around a simple
+        idea: that a hotel should feel like somewhere you want to linger.
+        Generous rooms, crisp linen, a restaurant and bar on site, and a spa
+        designed for slowing down — all held together by a team that
+        genuinely looks after the people who walk through the door.
+      </p>
+
+      <p>
+        Whether you are here for a night of business or a long weekend away,
+        every space has been thought through, from the finishes in the suites
+        to the quiet of the treatment rooms.
+      </p>
+
+      <div class="home-welcome__stats">
+
+        <div class="home-welcome__stat">
+          <span class="home-welcome__stat-number">4</span>
+          <span class="home-welcome__stat-label">Room Types</span>
+        </div>
+
+        <div class="home-welcome__stat">
+          <span class="home-welcome__stat-number">
+            5
+            <svg
+              class="home-welcome__stat-star"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2.5l2.97 6.02 6.65.97-4.81 4.69 1.14 6.62L12 17.77l-5.95 3.03 1.14-6.62-4.81-4.69 6.65-.97L12 2.5z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="home-welcome__stat-label">Guest Rated Spa</span>
+        </div>
+
+        <div class="home-welcome__stat">
+          <span class="home-welcome__stat-number">24/7</span>
+          <span class="home-welcome__stat-label">On-Site Security</span>
+        </div>
+
+      </div>
+
+      <a routerLink="/gallery" class="btn btn--primary">
+        View The Gallery
+      </a>
+
+    </div>
+
+    <figure class="home-welcome__media">
+
+      <img
+        src="images/interior/2.jpg"
+        alt="The Legacy Hotel & Spa in Tzaneen, Limpopo"
+        loading="lazy"
+      />
+
+    </figure>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     ROOMS PREVIEW — identical card to the Rooms page
+     ========================================================================== -->
+
+<section class="rooms home-rooms">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">Accommodation</span>
+      <h2>Rooms</h2>
+      <p>Thoughtfully designed spaces for every kind of stay.</p>
+    </div>
+
+    <div class="rooms__grid">
+
+      <article
+        class="room-card"
+        *ngFor="let room of rooms"
+      >
+
+        <div class="room-card__media">
+
+          <img
+            [src]="room.imageUrl"
+            [alt]="room.name + ' at The Legacy Hotel & Spa'"
+            loading="lazy"
+          />
+
+          <div class="room-card__media-overlay">
+            <span>
+              THE LEGACY HOTEL &amp; SPA
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="room-card__body">
+
+          <h3>
+            {{ room.name }}
+          </h3>
+
+          <!-- ==========================================================
+               PRICE — room-only price is now the headline figure
+               (client wants the lower price to stand out most).
+               Breakfast price is the smaller secondary line below.
+               ========================================================== -->
+
+          <div class="room-card__price">
+
+            <div class="room-card__price-breakfast">
+              <span class="room-card__price-badge">Room Only</span>
+              <span class="room-card__price-row">
+                <span class="room-card__price-amount">
+                  R {{ room.price | number }}
+                </span>
+                <span class="room-card__price-label">
+                  per night
+                </span>
+              </span>
+            </div>
+
+            <div class="room-card__price-base">
+              With breakfast: R {{ room.breakfastPrice | number }} per night
+            </div>
+
+          </div>
+
+
+          <div class="room-card__meta">
+
+            <div class="room-card__meta-item">
+
+              <img
+                [src]="room.occupancyIcon"
+                alt=""
+                aria-hidden="true"
+              />
+
+              <span>
+                Max {{ room.maxOccupancy }}
+              </span>
+
+            </div>
+
+
+            <div class="room-card__meta-item">
+
+              <img
+                [src]="room.sizeIcon"
+                alt=""
+                aria-hidden="true"
+              />
+
+              <span>
+                {{ room.roomSize }}
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <p class="room-card__desc">
+            {{ room.description }}
+          </p>
+
+
+          <a
+            routerLink="/booking"
+            class="btn btn--primary room-card__cta"
+          >
+            Book Your Stay Now
+          </a>
+
+
+          <div class="room-card__footer">
+
+            <ul class="room-card__amenities">
+
+              <li
+                *ngFor="let amenity of room.amenities"
+                [title]="amenity.label"
+              >
+
+                <img
+                  [src]="amenity.icon"
+                  [alt]="amenity.label"
+                />
+
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#full-info"
+              class="room-card__full-info"
+              aria-disabled="true"
+              title="Coming soon"
+            >
+              <span class="room-card__full-info-text">View Details</span>
+
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M9 5l7 7-7 7"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+              </svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="home-rooms__footer">
+      <a routerLink="/rooms" class="home-view-all">
+        View All Rooms
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================================================================
+     FACILITY AMENITIES
+     ========================================================================== -->
+
+<section class="home-amenities">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">On The Premises</span>
+      <h2>Facility Amenities</h2>
+      <p>Everything you need for a comfortable, well-equipped stay.</p>
+    </div>
+
+    <div class="home-amenities__grid">
+
+      <div
+        class="home-amenity"
+        *ngFor="let amenity of amenities"
+      >
+
+        <img
+          [src]="amenity.icon"
+          [alt]="amenity.label"
+          loading="lazy"
+        />
+
+        <span>{{ amenity.label }}</span>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     ON-SITE DINING — WASABI RESTAURANT CTA
+     ========================================================================== -->
+
+<section class="home-dining">
+  <div class="container home-dining__bar">
+
+    <div class="home-dining__brand">
+
+      <img
+        src="images/wasabi-logo.png"
+        alt="Wasabi Restaurant logo"
+        class="home-dining__logo"
+        loading="lazy"
+      />
+
+      <div class="home-dining__text">
+        <span class="home-dining__eyebrow">On-Site Dining</span>
+        <p>
+          Not looking for a place to stay or a spa to relax? No worries! Wasabi Restaurant is right on-site, serving up plenty of delicious options for you to enjoy.
+        </p>
+      </div>
+
+    </div>
+
+    <a
+      href="https://wasabirestaurant.co.za"
+      target="_blank"
+      rel="noopener"
+      class="btn btn--primary home-dining__cta"
+    >
+      Visit Wasabi Restaurant
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     SPA PREVIEW
+     ========================================================================== -->
+
+<section class="home-spa">
+  <div class="container home-spa__grid">
+
+    <div class="home-spa__media">
+      <img
+        src="images/spa/2.jpg"
+        alt="Guest relaxing during a spa treatment at The Legacy Hotel & Spa"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="home-spa__content">
+
+      <span class="home-spa__eyebrow">Wellness &amp; Relaxation</span>
+
+      <h2>Unwind At Our Spa</h2>
+
+      <p>
+        A quiet retreat within The Legacy Hotel &amp; Spa. Experienced
+        therapists, warm oils and heated stones come together to ease
+        tension and restore balance — body and mind. From aromatherapy
+        massage to hot stone therapy and facial treatments, every visit
+        is designed to help you slow down.
+      </p>
+
+      <div class="home-spa__actions">
+
+        <a routerLink="/spa" class="btn btn--primary">
+          Explore Spa Treatments
+        </a>
+
+        <a
+          href="pdfs/spa-serena-reatment-list.pdf"
+          target="_blank"
+          rel="noopener"
+          class="home-spa__price-link"
+        >
+          View Treatment Price List (PDF)
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     REVIEWS PREVIEW — identical card to the Reviews page
+     ========================================================================== -->
+
+<section class="home-reviews">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">Guest Experiences</span>
+      <h2>What Our Guests Are Saying</h2>
+      <p>Straight from Booking.com, Airbnb and TripAdvisor.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <article
+        class="review-card"
+        *ngFor="let review of reviews"
+      >
+
+        <!-- ====================================================
+             REVIEWER
+             ==================================================== -->
+
+        <div class="review-card__top">
+
+          <div class="review-card__avatar">
+            <img
+              src="/images/reviews/person.png"
+              alt=""
+            />
+          </div>
+
+          <div class="review-card__meta">
+
+            <span class="review-card__name">
+              {{ review.name }}
+            </span>
+
+            <span class="review-card__date">
+              {{ review.date }} &middot; {{ review.stayType }}
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- ====================================================
+             REVIEW TEXT
+             ==================================================== -->
+
+        <p class="review-card__quote">
+          "{{ review.text }}"
+        </p>
+
+
+        <!-- ====================================================
+             FOOTER
+             ==================================================== -->
+
+        <div class="review-card__footer">
+
+          <div class="review-card__platform">
+
+            <img
+              [src]="review.platformLogo"
+              [alt]="review.platform + ' logo'"
+            />
+
+          </div>
+
+
+          <div
+            class="review-card__stars"
+            [attr.aria-label]="review.rating + ' out of 5 stars'"
+          >
+
+            <span
+              class="review-card__star"
+              *ngFor="let n of [1,2,3,4,5]"
+              [class.review-card__star--empty]="n > review.rating"
+            >
+              ★
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="home-reviews__footer">
+      <a routerLink="/reviews" class="home-view-all">
+        Read All Reviews
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     GETTING AROUND — PROXIMITY TO KEY PLACES
+     ========================================================================== -->
+
+<section class="home-nearby">
+  <div class="container home-nearby__grid">
+
+    <figure class="home-nearby__media">
+
+      <img
+        src="images/tzaneen-dam.jpeg"
+        alt="Aerial view of the Tzaneen Dam and the Letaba Valley near The Legacy Hotel & Spa"
+        loading="lazy"
+      />
+
+      <figcaption>Tzaneen Dam · Letaba Valley</figcaption>
+
+    </figure>
+
+    <div class="home-nearby__content">
+
+      <span class="home-nearby__eyebrow">Getting Around</span>
+
+      <h2>Close To Everything That Matters</h2>
+
+      <p>
+        We are a few minutes from the centre of Tzaneen, with shopping,
+        medical care and the best of the Letaba Valley all within easy
+        reach of the hotel.
+      </p>
+
+      <ul class="home-nearby__list">
+
+        <li
+          class="home-nearby__item"
+          *ngFor="let place of nearby"
+        >
+
+          <span class="home-nearby__icon">
+            <img
+              src="images/icons/distance.png"
+              alt=""
+              aria-hidden="true"
+            />
+          </span>
+
+          <span class="home-nearby__text">
+            <span class="home-nearby__name">{{ place.name }}</span>
+            <span class="home-nearby__distance">{{ place.distance }}</span>
+          </span>
+
+        </li>
+
+      </ul>
+
+      <a routerLink="/contact-us" class="home-nearby__link">
+        Get Directions
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==========================================================================
+     MAP  (sits flush against the CTA below)
+     ========================================================================== -->
+
+<section class="contact-map">
+
+  <div class="contact-map__frame">
+
+    <iframe
+      src="https://www.google.com/maps?q=The+Legacy+Hotel+%26+Spa,+Ext+107+Voortrekker+Rd,+Aqua+Park,+Tzaneen,+0850&output=embed"
+      title="The Legacy Hotel & Spa location"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+
+  </div>
+
+</section>
+
+
+<!-- ==========================================================================
+     CTA
+     ========================================================================== -->
+
+<app-call-to-action></app-call-to-action>

@@ -1,0 +1,79 @@
+<section class="faq-page">
+  <app-page-hero
+    eyebrow="Need Assistance?"
+    title="Frequently Asked Questions"
+    paragraph="Find answers to some of the most common questions about your stay at The Legacy Hotel & Spa."
+  ></app-page-hero>
+  
+
+  <!-- FAQ Content -->
+  <section class="faq-page__content">
+    <div class="container">
+      <div class="faq-layout">
+        <!-- Sidebar / Categories -->
+        <aside class="faq-categories">
+          <span class="faq-categories__label"> Browse Topics </span>
+          <button
+            *ngFor="let category of categories"
+            type="button"
+            class="faq-categories__button"
+            [class.faq-categories__button--active]="
+              activeCategory === category.id
+            "
+            (click)="selectCategory(category.id)"
+          >
+            {{ category.name }}
+          </button>
+        </aside>
+
+        <!-- FAQ Accordion -->
+        <div class="faq-list">
+          <div class="faq-list__heading">
+            <span>{{ getActiveCategoryName() }}</span>
+            <p>Browse answers to commonly asked questions.</p>
+          </div>
+
+          <div
+            class="faq-item"
+            *ngFor="let faq of filteredFaqs; let i = index"
+            [class.faq-item--open]="openFaqIndex === i"
+          >
+            <button
+              type="button"
+              class="faq-item__question"
+              (click)="toggleFaq(i)"
+              [attr.aria-expanded]="openFaqIndex === i"
+            >
+              <span>{{ faq.question }}</span>
+              <span class="faq-item__icon">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+
+            <div class="faq-item__answer">
+              <div class="faq-item__answer-content">
+                <p>{{ faq.answer }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<!-- Contact CTA (now a separate component) -->
+<app-call-to-action></app-call-to-action>

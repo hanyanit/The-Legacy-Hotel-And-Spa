@@ -1,0 +1,219 @@
+<footer class="site-footer">
+
+  <div class="container">
+
+    <!-- ================================================================
+         TOP AREA
+         ================================================================ -->
+
+    <div class="site-footer__top">
+
+      <!-- ================================================================
+           BRAND
+           ================================================================ -->
+
+      <div class="site-footer__brand">
+
+        <a
+          routerLink="/"
+          class="site-footer__logo-link"
+          aria-label="The Legacy Hotel & Spa"
+        >
+          <img
+            src="images/light-logo.png"
+            alt="The Legacy Hotel & Spa"
+            class="site-footer__logo"
+          />
+        </a>
+
+        <p class="site-footer__tagline">
+          Timeless comfort, modern hospitality, and a spa
+          experience designed to help you slow down.
+        </p>
+
+        <ul class="site-footer__socials">
+
+          <li *ngFor="let social of socials">
+
+            <a
+              [href]="social.href"
+              [attr.aria-label]="social.label"
+              [title]="social.label"
+            >
+              <i
+                [class]="social.icon"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- ================================================================
+           EXPLORE
+           ================================================================ -->
+
+      <div class="site-footer__col">
+
+        <h3>Explore</h3>
+
+        <ul class="site-footer__links">
+
+          <li *ngFor="let link of exploreLinks">
+
+            <a [routerLink]="link.href">
+              {{ link.label }}
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- ================================================================
+           LEGAL COMPLIANCE
+           ================================================================ -->
+
+      <div class="site-footer__col">
+
+        <h3>Legal Compliance</h3>
+
+        <ul class="site-footer__links">
+
+          <li *ngFor="let link of legalLinks">
+
+            <a [routerLink]="link.href">
+              {{ link.label }}
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- ================================================================
+           CONTACT
+           ================================================================ -->
+
+      <div class="site-footer__col">
+
+        <h3>Get In Touch</h3>
+
+        <ul class="site-footer__contact">
+
+          <li>
+
+            <img
+              src="images/icons/location.png"
+              alt=""
+              aria-hidden="true"
+            />
+
+            <span>
+              Ext 107, Voortrekker Rd, Aqua Park, Tzaneen, 0850
+            </span>
+
+          </li>
+
+          <li>
+
+            <img
+              src="images/icons/call.png"
+              alt=""
+              aria-hidden="true"
+            />
+
+            <a href="tel:+27158803325">
+              015 880 3325
+            </a>
+
+          </li>
+
+          <li>
+
+            <img
+              src="images/icons/email.png"
+              alt=""
+              aria-hidden="true"
+            />
+
+            <a href="mailto:bookings@thelegacyhotel.co.za">
+              bookings@thelegacyhotel.co.za
+            </a>
+
+          </li>
+
+        </ul>
+
+
+        <!-- ==============================================================
+             NEWSLETTER
+             ============================================================== -->
+
+        <div class="site-footer__newsletter">
+
+          <label for="footer-email">
+            Join our mailing list
+          </label>
+
+          <div class="site-footer__newsletter-field">
+
+            <input
+              id="footer-email"
+              type="email"
+              placeholder="Your email address"
+              autocomplete="email"
+            />
+
+            <button
+              type="button"
+              class="site-footer__subscribe-btn"
+            >
+              Subscribe
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================================
+         BOTTOM BAR
+         ================================================================ -->
+
+    <div class="site-footer__bottom">
+
+      <p class="site-footer__copyright">
+        &copy; {{ year }} The Legacy Hotel &amp; Spa. All rights reserved.
+      </p>
+
+      <p class="site-footer__credit">
+        Engineered &amp; Secured by
+
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          Masinge IT Solutions
+        </a>
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>

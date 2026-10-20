@@ -1,0 +1,174 @@
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+
+<app-page-hero
+  eyebrow="Wellness & Relaxation"
+  title="Spa"
+  paragraph="A quiet retreat within The Legacy Hotel & Spa. Experienced therapists, warm oils and heated stones come together to ease tension and restore balance — body and mind."
+></app-page-hero>
+
+
+<!-- ================================================================
+     SPA SHOWCASE — VIDEO + IMAGE
+     ================================================================ -->
+
+<section class="spa-showcase">
+  <div class="container spa-showcase__grid">
+
+    <figure class="spa-showcase__media spa-showcase__media--video">
+      <video
+        class="spa-showcase__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="images/spa/spa-intro-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="videos/spa.mp4" type="video/mp4" />
+      </video>
+      <figcaption>Treatment Rooms</figcaption>
+    </figure>
+
+    <figure class="spa-showcase__media spa-showcase__media--image">
+      <img
+        src="images/spa/2.jpg"
+        alt="Guest relaxing during a spa treatment at The Legacy Hotel & Spa"
+        loading="lazy"
+      />
+      <figcaption>Relax & Restore</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SIGNATURE TREATMENTS
+     ================================================================ -->
+
+<section class="treatments">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-heading__eyebrow">What We Offer</span>
+      <h2>Signature Treatments</h2>
+      <p>Three ways to slow down, unwind and let go.</p>
+    </div>
+
+    <div class="treatments__grid">
+
+      <!-- ============================================================
+           01 — AROMATHERAPY MASSAGE
+           ============================================================ -->
+
+      <article class="treatment-card">
+
+        <span class="treatment-card__number">01.</span>
+        <span class="treatment-card__divider"></span>
+
+        <h3>Aromatherapy Massage</h3>
+        <p>
+          Relax your body and calm your mind with soothing massage
+          techniques using pure essential oils.
+        </p>
+
+        <div class="treatment-card__footer">
+          <span class="treatment-card__icon">
+            <img src="images/icons/aromatherapy.png" alt="" aria-hidden="true" />
+          </span>
+        </div>
+
+        <span class="treatment-card__photo">
+          <img
+            src="images/spa/4.jpg"
+            alt="Aromatherapy massage treatment"
+            loading="lazy"
+          />
+        </span>
+
+      </article>
+
+      <!-- ============================================================
+           02 — HOT STONE THERAPY
+           ============================================================ -->
+
+      <article class="treatment-card">
+
+        <span class="treatment-card__number">02.</span>
+        <span class="treatment-card__divider"></span>
+
+        <h3>Hot Stone Therapy</h3>
+        <p>
+          Warm stones are gently placed on key points of the body
+          to relax muscles and melt away tension.
+        </p>
+
+        <div class="treatment-card__footer">
+          <span class="treatment-card__icon">
+            <img src="images/icons/hot-stone.png" alt="" aria-hidden="true" />
+          </span>
+        </div>
+
+        <span class="treatment-card__photo">
+          <img
+            src="images/spa/5.jpg"
+            alt="Hot stone therapy treatment"
+            loading="lazy"
+          />
+        </span>
+
+      </article>
+
+      <!-- ============================================================
+           03 — FACIAL SKIN TREATMENT
+           ============================================================ -->
+
+      <article class="treatment-card">
+
+        <span class="treatment-card__number">03.</span>
+        <span class="treatment-card__divider"></span>
+
+        <h3>Facial Skin Treatment</h3>
+        <p>
+          Revitalize your skin with nourishing facial therapies
+          that cleanse, tone and hydrate.
+        </p>
+
+        <div class="treatment-card__footer">
+          <span class="treatment-card__icon">
+            <img src="images/icons/facial-massage.png" alt="" aria-hidden="true" />
+          </span>
+        </div>
+
+        <span class="treatment-card__photo">
+          <img
+            src="images/spa/6.jpg"
+            alt="Facial skin treatment"
+            loading="lazy"
+          />
+        </span>
+
+      </article>
+
+    </div>
+
+    <!-- ============================================================
+         TREATMENT PRICE LIST — LINK TO PDF
+         ============================================================ -->
+
+    <div class="treatments__price-list">
+      <a
+        href="pdfs/spa-serena-reatment-list.pdf"
+        target="_blank"
+        rel="noopener"
+        class="btn btn--primary treatments__price-link"
+      >
+        View Treatment Price List (PDF)
+      </a>
+    </div>
+
+  </div>
+</section>

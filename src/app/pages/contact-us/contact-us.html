@@ -1,0 +1,354 @@
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+
+<app-page-hero
+  eyebrow="We're Here To Help"
+  title="Contact Us"
+  paragraph="Whether you are planning a stay, have a question, or simply need assistance, our team at The Legacy Hotel & Spa is here to help."
+></app-page-hero>
+
+
+<!-- ================================================================
+     CONTACT CONTENT
+     ================================================================ -->
+
+<section class="contact-page">
+
+  <div class="container">
+
+    <div class="contact-layout">
+
+      <!-- ==========================================================
+           CONTACT INFORMATION
+           ========================================================== -->
+
+      <div class="contact-info">
+
+        <!-- ========================================================
+             CONTACT DETAILS
+             ======================================================== -->
+
+        <div class="contact-details">
+
+          <!-- Address -->
+
+          <div class="contact-detail">
+
+            <div class="contact-detail__icon">
+
+              <img
+                src="images/icons/location.png"
+                alt=""
+                aria-hidden="true"
+              />
+
+            </div>
+
+            <div class="contact-detail__content">
+
+              <span class="contact-detail__label">
+                Visit Us
+              </span>
+
+              <p>
+                Ext 107, Voortrekker Rd,<br />
+                Aqua Park, Tzaneen, 0850
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- Telephone -->
+
+          <div class="contact-detail">
+
+            <div class="contact-detail__icon">
+
+              <img
+                src="images/icons/call.png"
+                alt=""
+                aria-hidden="true"
+              />
+
+            </div>
+
+            <div class="contact-detail__content">
+
+              <span class="contact-detail__label">
+                Call Us
+              </span>
+
+              <a href="tel:+27158803325">
+                015 880 3325
+              </a>
+              <a href="tel:+27158803325">
+                068 865 7204
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- Email -->
+
+          <div class="contact-detail">
+
+            <div class="contact-detail__icon">
+
+              <img
+                src="images/icons/email.png"
+                alt=""
+                aria-hidden="true"
+              />
+
+            </div>
+
+            <div class="contact-detail__content">
+
+              <span class="contact-detail__label">
+                Email Us
+              </span>
+
+              <a href="mailto:bookings@thelegacyhotel.co.za">
+                bookings@thelegacyhotel.co.za
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ========================================================
+             BOOKING NOTE
+             ======================================================== -->
+
+        <div class="contact-info__note">
+
+          <span>
+            Planning a stay?
+          </span>
+
+          <p>
+            For room availability and reservations, our team can
+            assist you directly with your booking enquiry.
+          </p>
+
+          <a
+            routerLink="/booking"
+            class="btn btn--primary"
+          >
+            Make A Booking
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ==========================================================
+           CONTACT FORM
+           ========================================================== -->
+
+      <div class="contact-form-wrapper">
+
+        <div class="contact-form-header">
+
+          <span>
+            Send An Enquiry
+          </span>
+
+          <h2>
+            How can we help?
+          </h2>
+
+          <p>
+            Complete the form below and a member of our team
+            will get back to you.
+          </p>
+
+        </div>
+
+
+        <form
+          class="contact-form"
+          (ngSubmit)="submitForm()"
+        >
+
+          <!-- Full Name -->
+
+          <div class="contact-form__field">
+
+            <label for="name">
+              Full Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              name="name"
+              [(ngModel)]="form.name"
+              placeholder="Jan Smith"
+              autocomplete="name"
+              required
+            />
+
+          </div>
+
+
+          <!-- Email -->
+
+          <div class="contact-form__field">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="form.email"
+              placeholder="smithjan@gmail.com"
+              autocomplete="email"
+              required
+            />
+
+          </div>
+
+
+          <!-- Phone -->
+
+          <div class="contact-form__field">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              [(ngModel)]="form.phone"
+              placeholder="071 986 234"
+              autocomplete="tel"
+            />
+
+          </div>
+
+
+          <!-- Subject -->
+
+          <div class="contact-form__field">
+
+            <label for="subject">
+              Subject
+            </label>
+
+            <select
+              id="subject"
+              name="subject"
+              [(ngModel)]="form.subject"
+            >
+
+              <option value="" disabled>
+                Select an enquiry type
+              </option>
+
+              <option value="Booking Enquiry">
+                Booking Enquiry
+              </option>
+
+              <option value="Rooms & Accommodation">
+                Rooms & Accommodation
+              </option>
+
+              <option value="Dining">
+                Dining
+              </option>
+
+              <option value="Spa">
+                Spa
+              </option>
+
+              <option value="General Enquiry">
+                General Enquiry
+              </option>
+
+              <option value="Other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- Message -->
+
+          <div class="contact-form__field contact-form__field--full">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="form.message"
+              rows="6"
+              placeholder="How can we assist you?"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- Submit -->
+
+          <div class="contact-form__actions">
+
+            <button
+              type="submit"
+              class="btn btn--primary contact-form__submit"
+            >
+              Send Enquiry
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================================
+     MAP
+     ================================================================ -->
+
+<section class="contact-map">
+
+  <div class="contact-map__frame">
+
+    <iframe
+      src="https://www.google.com/maps?q=The+Legacy+Hotel+%26+Spa,+Ext+107+Voortrekker+Rd,+Aqua+Park,+Tzaneen,+0850&output=embed"
+      title="The Legacy Hotel & Spa location"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+
+  </div>
+
+</section>

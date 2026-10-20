@@ -1,0 +1,180 @@
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+
+<app-page-hero
+  eyebrow="Accommodation"
+  title="Rooms"
+  paragraph="Discover comfortable and thoughtfully designed accommodation at The Legacy Hotel & Spa."
+></app-page-hero>
+
+
+<!-- ================================================================
+     ROOMS
+     ================================================================ -->
+
+<section class="rooms">
+
+  <div class="container">
+    <div class="rooms__grid">
+
+      <article
+        class="room-card"
+        *ngFor="let room of rooms"
+      >
+
+        <div class="room-card__media">
+
+          <img
+            [src]="room.imageUrl"
+            [alt]="room.name + ' at The Legacy Hotel & Spa'"
+            loading="lazy"
+          />
+
+          <div class="room-card__media-overlay">
+            <span>
+              THE LEGACY HOTEL &amp; SPA
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="room-card__body">
+
+          <h3>
+            {{ room.name }}
+          </h3>
+
+          <!-- ==========================================================
+               PRICE — room-only price is now the headline figure
+               (client wants the lower price to stand out most).
+               Breakfast price is the smaller secondary line below.
+               ========================================================== -->
+
+          <div class="room-card__price">
+
+            <div class="room-card__price-breakfast">
+              <span class="room-card__price-badge">Room Only</span>
+              <span class="room-card__price-row">
+                <span class="room-card__price-amount">
+                  R {{ room.price | number }}
+                </span>
+                <span class="room-card__price-label">
+                  per night
+                </span>
+              </span>
+            </div>
+
+            <div class="room-card__price-base">
+              With breakfast: R {{ room.breakfastPrice | number }} per night
+            </div>
+
+          </div>
+
+
+          <div class="room-card__meta">
+
+            <div class="room-card__meta-item">
+
+              <img
+                [src]="room.occupancyIcon"
+                alt=""
+                aria-hidden="true"
+              />
+
+              <span>
+                Max {{ room.maxOccupancy }}
+              </span>
+
+            </div>
+
+
+            <div class="room-card__meta-item">
+
+              <img
+                [src]="room.sizeIcon"
+                alt=""
+                aria-hidden="true"
+              />
+
+              <span>
+                {{ room.roomSize }}
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <p class="room-card__desc">
+            {{ room.description }}
+          </p>
+
+
+          <a
+            routerLink="/booking"
+            class="btn btn--primary room-card__cta"
+          >
+            Book Your Stay Now
+          </a>
+
+
+          <div class="room-card__footer">
+
+            <ul class="room-card__amenities">
+
+              <li
+                *ngFor="let amenity of room.amenities"
+                [title]="amenity.label"
+              >
+
+                <img
+                  [src]="amenity.icon"
+                  [alt]="amenity.label"
+                />
+
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#full-info"
+              class="room-card__full-info"
+              aria-disabled="true"
+              title="Coming soon"
+            >
+              <span class="room-card__full-info-text">View Details</span>
+
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M9 5l7 7-7 7"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+              </svg>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>

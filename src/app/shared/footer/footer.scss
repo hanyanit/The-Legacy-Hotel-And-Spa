@@ -1,0 +1,489 @@
+/* ==========================================================================
+   SITE FOOTER
+   ========================================================================== */
+
+.site-footer {
+  padding: var(--space-8) 0 var(--space-5);
+
+  color: var(--color-bg);
+
+  background: var(--color-ink);
+}
+
+
+/* ==========================================================================
+   GLOBAL FOOTER RESETS
+   ========================================================================== */
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.site-footer p {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   TOP AREA
+   ========================================================================== */
+
+.site-footer__top {
+  display: grid;
+
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+
+  gap: var(--space-6);
+
+  padding-bottom: var(--space-6);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+
+@media (max-width: 1024px) {
+
+  .site-footer__top {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .site-footer__top {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-5);
+  }
+
+}
+
+
+/* ==========================================================================
+   BRAND
+   ========================================================================== */
+
+.site-footer__brand {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+
+.site-footer__logo-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  width: fit-content;
+
+  margin-bottom: var(--space-4);
+
+  text-decoration: none;
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.site-footer__logo {
+  display: block;
+
+  width: auto;
+
+  /*
+   * Larger luxury footer logo
+   */
+  height: 80px;
+
+  max-width: 320px;
+
+  object-fit: contain;
+
+  object-position: left center;
+}
+
+
+/* ==========================================================================
+   TAGLINE
+   ========================================================================== */
+
+.site-footer__tagline {
+  max-width: 32ch;
+
+  margin-bottom: var(--space-4);
+
+  font-size: var(--fs-small);
+
+  line-height: 1.75;
+
+  color: rgba(255, 255, 255, 0.62);
+}
+
+
+/* ==========================================================================
+   SOCIAL ICONS
+   ========================================================================== */
+
+.site-footer__socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-1);
+}
+
+
+.site-footer__socials a {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  margin-top: 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  text-decoration: none !important;
+
+  transition:
+    border-color var(--transition),
+    background var(--transition),
+    transform 200ms ease;
+}
+
+
+.site-footer__socials a:hover {
+  border-color:
+    var(--color-primary-light);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  transform: translateY(-2px);
+}
+
+
+.site-footer__socials i {
+  font-size: 0.95rem;
+
+  color: var(--color-bg);
+
+  opacity: 0.85;
+}
+
+
+/* ==========================================================================
+   COLUMNS
+   ========================================================================== */
+
+.site-footer__col h3 {
+  margin-bottom: var(--space-4);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.site-footer__links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-2);
+}
+
+
+.site-footer__links a {
+  font-size: var(--fs-small);
+
+  color: rgba(255, 255, 255, 0.78);
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition);
+}
+
+
+.site-footer__links a:hover {
+  color: var(--color-primary-light);
+}
+
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+
+.site-footer__contact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-3);
+
+  margin-bottom: var(--space-5);
+}
+
+
+.site-footer__contact li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: var(--space-1);
+
+  font-size: var(--fs-small);
+
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+.site-footer__contact img {
+  flex-shrink: 0;
+
+  width: 16px;
+  height: 16px;
+
+  margin-top: 0.2rem;
+
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+
+  opacity: 0.65;
+}
+
+
+.site-footer__contact a {
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition);
+}
+
+
+.site-footer__contact a:hover {
+  color: var(--color-primary-light);
+}
+
+
+/* ==========================================================================
+   NEWSLETTER
+   ========================================================================== */
+
+.site-footer__newsletter label {
+  display: block;
+
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-3);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.site-footer__newsletter-field {
+  display: flex;
+
+  border:
+    2px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.site-footer__newsletter-field input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding:
+    0.75rem var(--space-3);
+
+  font-size: var(--fs-small);
+
+  color: var(--color-bg);
+
+  background: transparent;
+
+  border: none;
+}
+
+
+.site-footer__newsletter-field input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+
+.site-footer__newsletter-field input:focus {
+  outline:
+    2px solid var(--color-primary-light);
+
+  outline-offset: -2px;
+}
+
+
+.site-footer__subscribe-btn {
+  flex-shrink: 0;
+
+  padding:
+    0.75rem var(--space-4);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  color: var(--color-ink);
+
+  background: var(--color-bg);
+
+  border: none;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+
+.site-footer__subscribe-btn:hover {
+  background:
+    var(--color-primary-light);
+
+  color:
+    var(--color-bg);
+}
+
+
+/* ==========================================================================
+   BOTTOM BAR
+   ========================================================================== */
+
+.site-footer__bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: var(--space-3);
+
+  padding-top: var(--space-5);
+
+  font-size: 0.78rem;
+
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+.site-footer__credit a {
+  color: rgba(255, 255, 255, 0.7);
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.3);
+
+  transition:
+    color var(--transition),
+    border-color var(--transition);
+}
+
+
+.site-footer__credit a:hover {
+  color: var(--color-primary-light);
+
+  border-color: var(--color-primary-light);
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+  .site-footer__logo {
+    height: 70px;
+
+    max-width: 290px;
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+  .site-footer__bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .site-footer__logo {
+    height: 62px;
+
+    max-width: 260px;
+  }
+
+}
+
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 400px) {
+
+  .site-footer__logo {
+    height: 56px;
+
+    max-width: 235px;
+  }
+
+}

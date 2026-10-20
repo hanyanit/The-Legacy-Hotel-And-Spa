@@ -1,0 +1,157 @@
+<!-- ================================================================
+     PAGE HERO
+     ================================================================ -->
+
+<app-page-hero
+  eyebrow="Guest Experiences"
+  title="Reviews"
+  paragraph="See what our guests are saying about their stay at The Legacy Hotel & Spa — straight from Google, Booking.com, Airbnb and TripAdvisor."
+></app-page-hero>
+
+
+<!-- ================================================================
+     REVIEWS CONTENT
+     ================================================================ -->
+
+<section class="reviews-page">
+  <div class="container">
+
+    <div class="reviews-layout">
+
+      <!-- ==========================================================
+           CATEGORY SIDEBAR
+           ========================================================== -->
+
+      <aside class="reviews-categories">
+
+        <span class="reviews-categories__label">
+          Browse By Topic
+        </span>
+
+        <button
+          *ngFor="let c of categories"
+          type="button"
+          class="reviews-categories__button"
+          [class.reviews-categories__button--active]="activeCategory === c.id"
+          (click)="setCategory(c.id)"
+        >
+          {{ c.name }}
+        </button>
+
+      </aside>
+
+
+      <!-- ==========================================================
+           REVIEWS CONTENT
+           ========================================================== -->
+
+      <div class="reviews-content">
+
+        <!-- Heading -->
+        <div class="reviews-content__heading">
+
+          <span>
+            {{ getActiveCategoryName() }}
+          </span>
+
+          <p>
+            {{ filteredReviews.length }}
+            review{{ filteredReviews.length === 1 ? '' : 's' }}
+          </p>
+
+        </div>
+
+
+        <!-- ========================================================
+             REVIEWS GRID
+             ======================================================== -->
+
+        <div class="reviews-grid">
+
+          <article
+            class="review-card"
+            *ngFor="let review of filteredReviews"
+          >
+
+            <!-- ====================================================
+                 REVIEWER
+                 ==================================================== -->
+
+            <div class="review-card__top">
+
+              <div class="review-card__avatar">
+                <img
+                  src="/images/reviews/person.png"
+                  alt=""
+                />
+              </div>
+
+              <div class="review-card__meta">
+
+                <span class="review-card__name">
+                  {{ review.name }}
+                </span>
+
+                <span class="review-card__date">
+                  {{ review.date }} &middot; {{ review.stayType }}
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- ====================================================
+                 REVIEW TEXT
+                 ==================================================== -->
+
+            <p class="review-card__quote">
+              "{{ review.text }}"
+            </p>
+
+
+            <!-- ====================================================
+                 FOOTER
+                 ==================================================== -->
+
+            <div class="review-card__footer">
+
+              <!-- Platform -->
+              <div class="review-card__platform">
+
+                <img
+                  [src]="review.platformLogo"
+                  [alt]="review.platform + ' logo'"
+                />
+
+              </div>
+
+
+              <!-- Stars -->
+              <div
+                class="review-card__stars"
+                [attr.aria-label]="review.rating + ' out of 5 stars'"
+              >
+
+                <span
+                  class="review-card__star"
+                  *ngFor="let n of [1,2,3,4,5]"
+                  [class.review-card__star--empty]="n > review.rating"
+                >
+                  ★
+                </span>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
